@@ -75,8 +75,8 @@ public class AuthenticationService {
 		List<Menu> menus = menuService.getMenusForUser(user.getId());
 		List<Hospital> hospitals = hospitalService.getVendorHospitals(user.getVendorId(), user.getServiceId());
 
-//        revokeAllTokenByUser(user);
-//        saveUserToken(jwt, user);
+        revokeAllTokenByUser(user);
+        saveUserToken(jwt, user);
 
 		return new AuthenticationResponse(jwt, "User login was successful", user, menus, hospitals);
 
